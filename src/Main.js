@@ -1,29 +1,51 @@
 import $style from "@src/Main.scss";
+import cat from "@src/cat.jpg";
 import data from "@src/_.json";
 import { Helmet } from "react-helmet";
 import React from "react";
 import Section from "@src/Section.js";
-const { title, categories, items } = data;
-export default function Main() {
-  const sections = categories.map(categoryTitle => (
-    <Section
-      key={categoryTitle}
-      categoryTitle={categoryTitle}
-      items={items.filter(({ category }) => category === categoryTitle)}
-    />
-  ));
-
-  return (
-    <main>
-      <Helmet>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <title>yeongdie</title>
-      </Helmet>
-      <header className={$style.head}>
-        <h1 className={$style.title}>{title}</h1>
-      </header>
-      {sections}
-    </main>
-  );
+import Thanks from "@src/Thanks.js";
+const { title, categories, items, thanks } = data;
+export default class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.sections = categories.map(categoryTitle => (
+      <Section
+        key={categoryTitle}
+        categoryTitle={categoryTitle}
+        items={items.filter(({ category }) => category === categoryTitle)}
+      />
+    ));
+    this.state = {
+      cat: true
+    };
+    this.catClick = this.catClick.bind(this);
+  }
+  catClick() {
+    this.setState({
+      cat: false
+    });
+  }
+  render() {
+    return (
+      <main className={this.state.cat ? $style.cat : ""}>
+        <Helmet>
+          <meta charset="utf-8" />
+          <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1.0"
+          />
+          <title>yeongdie</title>
+        </Helmet>
+        <figure className={$style.figure}>
+          <img src={cat} onClick={this.catClick} className={$style.cat} />
+        </figure>
+        <header className={$style.head}>
+          <h1 className={$style.title}>{title}</h1>
+        </header>
+        {this.sections}
+        <Thanks thanks={thanks} />
+      </main>
+    );
+  }
 }

@@ -70,6 +70,22 @@ module.exports = {
           { loader: "css-loader", options: { modules: true } },
           { loader: "sass-loader" }
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|ico)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              name: isProduction
+                ? "[contenthash:20].min.[ext]"
+                : "[name].[ext]?[hash]",
+              limit: "2048",
+              outputPath: "..",
+              publicPath: isProduction ? "/" : "./"
+            }
+          }
+        ]
       }
     ]
   },
