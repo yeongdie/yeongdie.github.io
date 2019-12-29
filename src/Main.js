@@ -1,6 +1,6 @@
 import $style from "@src/Main.scss";
 import cat from "@src/cat.jpg";
-import data from "@src/_.json";
+import data from "@src/_.ts";
 import React from "react";
 import Section from "@src/Section.js";
 import Thanks from "@src/Thanks.js";

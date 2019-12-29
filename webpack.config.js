@@ -14,6 +14,7 @@ const srcPath = path.resolve(serverPath, "src");
 module.exports = {
   mode: isProduction ? "production" : "development",
   entry: { index: path.resolve(srcPath, "index.js") },
+  devtool: isProduction ? "none" : "cheap-module-source-map",
   output: {
     path: distPath,
     publicPath: isProduction ? "/asset/" : "./asset/",
@@ -34,6 +35,15 @@ module.exports = {
             options: {
               presets: ["@babel/preset-react"]
             }
+          }
+        ]
+      },
+      {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "ts-loader"
           }
         ]
       },
@@ -99,16 +109,8 @@ module.exports = {
     splitChunks: {
       chunks: "async",
       cacheGroups: {
-        react: {
-          test: /[\\/]node_modules[\\/]react/,
-          chunks: "all",
-          name: "react",
-          filename: isProduction
-            ? "[contenthash].min.js"
-            : "[name].bundle.js?[hash]"
-        },
         vendor: {
-          test: /[\\/]node_modules[\\/](?!react)/,
+          test: /node_modules/,
           chunks: "all",
           name: "vendor",
           filename: isProduction
