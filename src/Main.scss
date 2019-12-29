@@ -1,36 +1,10 @@
-main {
-  &.cat {
-    .head,
-    section {
-      display: none;
-    }
-  }
-  &:not(.cat) {
-    .figure {
-      display: none;
-    }
-  }
-}
-.figure {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  .cat {
-    cursor: pointer;
-    width: 240px;
-    height: auto;
-  }
-}
 .head {
   padding-bottom: 1em;
 }
 .title {
   margin: 0;
   font-style: italic;
+}
+.tumblr {
+  font-size: 12px;
 }

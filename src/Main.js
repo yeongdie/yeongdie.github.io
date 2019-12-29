@@ -1,10 +1,10 @@
 import $style from "@src/Main.scss";
-import cat from "@src/cat.jpg";
+import Cat from "@src/Cat.js";
 import data from "@src/_.ts";
 import React from "react";
 import Section from "@src/Section.js";
 import Thanks from "@src/Thanks.js";
-const { title, categories, items, thanks } = data;
+const { title, tumblr, categories, items, thanks } = data;
 export default class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -27,15 +27,21 @@ export default class Main extends React.Component {
   }
   render() {
     return (
-      <main className={this.state.cat ? $style.cat : ""}>
-        <figure className={$style.figure}>
-          <img src={cat} onClick={this.catClick} className={$style.cat} />
-        </figure>
-        <header className={$style.head}>
-          <h1 className={$style.title}>{title}</h1>
-        </header>
-        {this.sections}
-        <Thanks thanks={thanks} />
+      <main>
+        {this.state.cat ? (
+          <Cat onClick={this.catClick} />
+        ) : (
+          <>
+            <header className={$style.head}>
+              <h1 className={$style.title}>{title}</h1>
+              <a href={tumblr} target="_blank" className={$style.tumblr}>
+                {tumblr}
+              </a>
+            </header>
+            {this.sections}
+            <Thanks thanks={thanks} />
+          </>
+        )}
       </main>
     );
   }

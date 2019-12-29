@@ -1,5 +1,6 @@
 interface Data {
   title: string;
+  tumblr: string;
   categories: string[];
   items: Item[];
   thanks: string[];
@@ -15,6 +16,7 @@ interface Item {
 }
 const _: Data = {
   title: "die 2019",
+  tumblr: "https://yeongchoi.tumblr.com/",
   categories: [
     "DJING",
     "MIX SHOW",

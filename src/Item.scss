@@ -1,9 +1,9 @@
 .word {
-  &:first-of-type {
+  &:first-child {
     display: inline-block;
     min-width: 40px;
   }
-  &:not(:last-of-type) {
+  &:not(:last-child) {
     margin-right: 0.5em;
   }
 }

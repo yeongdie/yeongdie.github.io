@@ -1,0 +1,25 @@
+.figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  .cat,
+  .bat {
+    cursor: none;
+  }
+  .cat {
+    width: 240px;
+    height: auto;
+  }
+  .bat {
+    $_size: 48px;
+    position: fixed;
+    width: $_size;
+    height: $_size;
+  }
+}
