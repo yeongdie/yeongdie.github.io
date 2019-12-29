@@ -7,9 +7,11 @@ interface Data {
 interface Item {
   category: string;
   title: string;
+  subtitle?: string;
   when: string;
   where: string;
   with: string;
+  to?: string;
 }
 const _: Data = {
   title: "die 2019",
@@ -129,45 +131,56 @@ const _: Data = {
     },
     {
       category: "MIX SHOW",
-      title: "MIX [NOT OVER YET]",
+      title: "MIX",
+      subtitle: "[yyyy]",
       when: "",
       where: "",
       with: "scramble radio"
     },
     {
       category: "MIX SHOW",
-      title: "MIX [8,800,000,000]",
+      title: "MIX",
+      subtitle: "[8,800,000,000]",
       when: "",
       where: "",
-      with: "8&8"
+      with: "8&8",
+      to: "https://soundcloud.com/yeongchoi/88a"
     },
     {
       category: "MIX SHOW",
-      title: "MIX [Just a Player]",
+      title: "MIX",
+      subtitle: "[Just a Player]",
       when: "",
       where: "",
-      with: "budxbeats"
+      with: "budxbeats",
+      to: "https://soundcloud.com/budxbeats/yeong-die-just-a-player"
     },
     {
       category: "MIX SHOW",
-      title: "MIX [だいだい]",
+      title: "MIX",
+      subtitle: "[だいだい]",
       when: "",
       where: "",
       with: "perform 2019"
     },
     {
       category: "MIX SHOW",
-      title: "MIX OTJUNRI",
+      title: "MIX",
+      subtitle: "OTJUNRI_yeongdie",
       when: "",
       where: "",
-      with: "otjungri"
+      with: "otjungri",
+      to: "https://soundcloud.com/otjungri/ojr5-mix-round-7-yeong-die"
     },
     {
       category: "MIX SHOW",
-      title: "MIX 48MINX027",
+      title: "MIX",
+      subtitle: "48MINX027_yeongdie",
       when: "",
       where: "",
-      with: "irs48 radio"
+      with: "irs48 radio",
+      to:
+        "https://soundcloud.com/otakhee/irs48-radio-48minx027-wyeong-die-seoul-kr"
     },
     {
       category: "LIVE",
@@ -214,68 +227,87 @@ const _: Data = {
     },
     {
       category: "VIDEO SOUNDS",
-      title: "[.Pic] x [Yeong Choi] - Mary Rid",
+      title: "[.Pic] x [Yeong Choi]",
+      subtitle: "Mary Rid",
       when: "2019-12-01",
       where: "",
-      with: ""
+      with: "",
+      to:
+        "https://www.instagram.com/p/B5hHXaEJvfo/?utm_source=ig_web_button_share_sheet"
     },
     {
       category: "VIDEO SOUNDS",
       title:
-        "[.Pic] x [Yeong Choi] - There are only two ways to get out of here - fine",
+        "[.Pic] x [Yeong Choi] - There are only two ways to get out of here",
+      subtitle: "fine",
       when: "2019-09-25",
       where: "",
-      with: ""
+      with: "",
+      to: "https://youtu.be/yoF1szjfLy0"
     },
     {
       category: "VIDEO SOUNDS",
-      title: "[DOOROODOOROO] x [DAZED KOREA] - Tune of Nap(Artist Documentary)",
+      title: "[DOOROODOOROO] x [DAZED KOREA] Artist Documentary",
+      subtitle: "Tune of Nap",
       when: "2019-05-29",
       where: "",
-      with: ""
+      with: "",
+      to: "https://youtu.be/OZyQIB3PPpg"
     },
     {
       category: "VIDEO SOUNDS",
-      title: "[.Pic] x [Halominium] - Okinawa gals Video Clips I, II, III",
+      title: "[.Pic] x [Halominium]",
+      subtitle: "Okinawa gals Video Clips I, II, III",
       when: "2019-04-12",
       where: "",
-      with: ""
+      with: "",
+      to:
+        "https://www.youtube.com/playlist?list=PLhcn_fkVsAf2vrqYPJikaQDF1O6NLz0ju"
     },
     {
       category: "VIDEO SOUNDS",
-      title: "[.Pic] x [Yeong Choi] - Drink Sakura",
+      title: "[.Pic] x [Yeong Choi]",
+      subtitle: "Drink Sakura",
       when: "2019-04-07",
       where: "",
-      with: ""
+      with: "",
+      to: "https://youtu.be/TkQEPt4fRQc"
     },
     {
       category: "VIDEO SOUNDS",
-      title: "[.Pic] x [Yeong Choi] - Four Pink",
+      title: "[.Pic] x [Yeong Choi]",
+      subtitle: "Four Pink",
       when: "2019-03-29",
       where: "",
-      with: ""
+      with: "",
+      to: "https://youtu.be/EuaD7E03s48"
     },
     {
       category: "VIDEO SOUNDS",
-      title: "[.Pic] x [Yeong Choi] - Daughter of the World Snake(Turn on)",
+      title: "[.Pic] x [Yeong Choi]",
+      subtitle: "Daughter of the World Snake(Turn on)",
       when: "2019-03-22",
       where: "",
-      with: ""
+      with: "",
+      to: "https://youtu.be/93VCBE1BoRY"
     },
     {
       category: "VIDEO SOUNDS",
-      title:
-        "[.Pic] x [Yeong Choi] - Aside(There is only two ways out of here)",
+      title: "[.Pic] x [Yeong Choi]",
+      subtitle: "Aside(There is only two ways out of here)",
       when: "2019-03-15",
       where: "",
-      with: ""
+      with: "",
+      to: "https://youtu.be/40vXde1gM84"
     },
     {
       category: "VIDEO SOUNDS",
-      title: "[.Pic] x [Yeong Choi] - Woo(Tattoo Shop)",
+      title: "[.Pic] x [Yeong Choi]",
+      subtitle: "Woo(Tattoo Shop)",
       when: "2019-03-07",
       where: "",
-      with: ""
+      with: "",
+      to: "https://youtu.be/e7BtJziwmbo"
     },
     {
       category: "INTERVIEW",
@@ -286,10 +318,13 @@ const _: Data = {
     },
     {
       category: "INTERVIEW",
-      title: "Marie Claire 3월호 90년대생 여성 특집",
+      title: "Marie Claire 3월호",
+      subtitle: "90년대생 여성 특집",
       when: "",
       where: "",
-      with: ""
+      with: "",
+      to:
+        "http://www.marieclairekorea.com/2019/03/lifestyle/90%EB%85%84%EC%83%9D-%EC%97%AC%EC%9E%90%EC%82%AC%EB%9E%8C-3/"
     }
   ],
   thanks: [
@@ -297,34 +332,37 @@ const _: Data = {
     "bela",
     "BUDXBEATS",
     "dydsu",
+    "Cosmoswholesale",
     "Emma Zoia",
     "Jesse You",
-    "mogwaa",
+    "Liu Lee",
+    "Mogwaa",
     "NAO",
     "OTAKHEE",
+    "PACK",
+    "Youngmond",
     "VANS KOREA",
     "Von Bueno",
     "wholesome",
     "고우",
     "김고은",
     "김지수",
+    "김지환",
     "김희애",
     "노상호",
     "더레퍼런스",
     "람한",
     "리사익",
-    "리우리",
     "박다함",
     "박성천",
     "박혜인",
-    "살라만다 성지민",
-    "살라만다 장예진",
+    "살라만다",
+    "성지민",
     "성혜인",
     "신관수",
     "신도시",
     "신예슬",
     "양민영",
-    "우마",
     "위지영",
     "유선애",
     "윤소진",
@@ -339,12 +377,14 @@ const _: Data = {
     "임유근",
     "임유청",
     "임해리",
+    "장예진",
     "전가경",
     "정구원",
     "정다운",
     "정명우",
     "조율",
     "최리지",
+    "최주연",
     "키오스크키오스크",
     "하킴",
     "한보경",
