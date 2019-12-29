@@ -2,6 +2,10 @@
 .head {
   @include mixin-head;
 }
+.list {
+  margin: 0;
+  padding: 0;
+}
 .thank {
   display: block;
 }

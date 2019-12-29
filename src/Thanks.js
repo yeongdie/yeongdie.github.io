@@ -4,13 +4,13 @@ export default function Thanks({ thanks }) {
   return (
     <section>
       <h2 className={$style.head}>THANKS TO</h2>
-      <div>
+      <ul className={$style.list}>
         {thanks.map((thank, index) => (
-          <span key={index} className={$style.thank}>
+          <li key={index} className={$style.thank}>
             {thank}
-          </span>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }
