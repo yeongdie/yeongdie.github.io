@@ -1,4 +1,4 @@
-import $style from "@src/Section.scss";
+import $style from "@src/Thanks.scss";
 import React from "react";
 export default function Thanks({ thanks }) {
   return (
