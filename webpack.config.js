@@ -2,12 +2,13 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+const webpack = require("webpack");
 
 const isProduction = process.env.NODE_ENV === "production";
 const serverPath = process.cwd();
 const distPath = isProduction
-  ? path.resolve(serverPath, "js")
-  : path.resolve("/", "inetpub", "wwwroot", "yeongdie", "js");
+  ? path.resolve(serverPath, "asset")
+  : path.resolve("/Users", "jenny", "www", "yeongdie", "asset");
 const srcPath = path.resolve(serverPath, "src");
 
 module.exports = {
@@ -15,7 +16,7 @@ module.exports = {
   entry: { index: path.resolve(srcPath, "index.js") },
   output: {
     path: distPath,
-    publicPath: isProduction ? "/js/" : "./js/",
+    publicPath: isProduction ? "/asset/" : "./asset/",
     chunkFilename: isProduction
       ? "[contenthash].min.js"
       : "[name].bundle.js?[hash]",
@@ -31,42 +32,15 @@ module.exports = {
           {
             loader: "babel-loader",
             options: {
-              presets: [
-                "@babel/preset-react",
-                [
-                  "@babel/preset-env",
-                  {
-                    corejs: "3",
-                    useBuiltIns: "usage",
-                    modules: "commonjs"
-                  }
-                ]
-              ]
+              presets: ["@babel/preset-react"]
             }
-          },
-          {
-            loader: "source-map-loader"
-          }
-        ]
-      },
-      {
-        test: /\.ts(x?)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: "ts-loader"
           }
         ]
       },
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: isProduction ? "/css/" : "./css/"
-            }
-          },
+          { loader: MiniCssExtractPlugin.loader },
           { loader: "css-loader", options: { modules: true } },
           { loader: "sass-loader" }
         ]
@@ -80,9 +54,7 @@ module.exports = {
               name: isProduction
                 ? "[contenthash:20].min.[ext]"
                 : "[name].[ext]?[hash]",
-              limit: "2048",
-              outputPath: "..",
-              publicPath: isProduction ? "/" : "./"
+              limit: "2048"
             }
           }
         ]
@@ -95,34 +67,35 @@ module.exports = {
     }
   },
   plugins: [
+    new webpack.IgnorePlugin({
+      resourceRegExp: /^\.\/locale$/,
+      contextRegExp: /moment$/
+    }),
     new HtmlWebpackPlugin({
       filename: "../index.html",
-      title: ""
+      title: "yeong die",
+      favicon: path.resolve(srcPath, "fav.ico"),
+      meta: {
+        charset: "utf-8",
+        viewport: "width=device-width,initial-scale=1.0"
+      }
     }),
     new MiniCssExtractPlugin({
       chunkFilename: isProduction
-        ? "../css/[contenthash].min.css"
-        : "../css/[name].bundle.css?[hash]",
+        ? "[contenthash].min.css"
+        : "[name].bundle.css?[hash]",
       filename: isProduction
-        ? "../css/[contenthash].min.css"
-        : "../css/[name].bundle.css?[hash]"
+        ? "[contenthash].min.css"
+        : "[name].bundle.css?[hash]"
     }),
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [
-        path.resolve(
-          distPath,
-          "..",
-          "**",
-          isProduction ? "*.min.*" : "*.bundle.*"
-        )
-      ],
+      cleanOnceBeforeBuildPatterns: [path.resolve(distPath, "**", "*")],
       dangerouslyAllowCleanPatternsOutsideProject: true,
       dry: false,
       verbose: true
     })
   ],
   optimization: {
-    runtimeChunk: "single",
     splitChunks: {
       chunks: "async",
       cacheGroups: {

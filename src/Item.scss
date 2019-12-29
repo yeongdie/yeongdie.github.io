@@ -1,4 +1,8 @@
 .word {
+  &:first-of-type {
+    display: inline-block;
+    min-width: 40px;
+  }
   &:not(:last-of-type) {
     margin-right: 0.5em;
   }

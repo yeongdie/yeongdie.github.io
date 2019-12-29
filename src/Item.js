@@ -1,9 +1,15 @@
 import $style from "@src/Item.scss";
-import moment from "moment";
 import React from "react";
 export default function Item({ item }) {
   const { title } = item;
-  const date = item.when ? moment(item.when).format("MM.DD") : "";
+  const date = item.when
+    ? (() => {
+        const parsed = new Date(item.when);
+        const m = parsed.getMonth() + 1;
+        const d = parsed.getDate();
+        return `${m < 10 ? `0${m}` : m}.${d < 10 ? `0${d}` : d}`;
+      })()
+    : "";
   const location = item.where ? `@${item.where}` : "";
   const collaborator = item.with ? `/w ${item.with}` : "";
   return (

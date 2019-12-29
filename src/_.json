@@ -13,21 +13,21 @@
       "category": "DJING",
       "title": "서울밤도깨비야시장 크리스마스 마켓 공연",
       "when": "2019-12-23",
-      "where": "",
+      "where": "여의도 한강공원",
       "with": ""
     },
     {
       "category": "DJING",
       "title": "BUDXBEATS Present",
       "when": "2019-12-07",
-      "where": "channel1969.seoul",
+      "where": "채널1969(channel1969)",
       "with": ""
     },
     {
       "category": "DJING",
       "title": "Someone’s Present",
       "when": "2019-12-06",
-      "where": "channel1969.seoul",
+      "where": "채널1969(channel1969)",
       "with": ""
     },
     {
@@ -39,37 +39,30 @@
     },
     {
       "category": "DJING",
-      "title": "Vacuum FACTOR #02",
-      "when": "2019-11-23",
-      "where": "seendosi",
-      "with": ""
-    },
-    {
-      "category": "DJING",
       "title": "큰일 페스티벌",
       "when": "2019-11-23",
-      "where": "keunil2019",
+      "where": "경의선공유지 기린캐슬",
       "with": ""
     },
     {
       "category": "DJING",
       "title": "after j*kr off : yuj/revolt",
       "when": "2019-11-16",
-      "where": "after_jerk_off",
+      "where": "after jerk off",
       "with": ""
     },
     {
       "category": "DJING",
       "title": "한솔 개인전 언제나내일 opening show",
       "when": "2019-11-02",
-      "where": "",
+      "where": "플레이스막 레이져(placemak raser)",
       "with": ""
     },
     {
       "category": "DJING",
-      "title": "Eye, Ear, Etc-GIRLS. opening",
+      "title": "Eye, Ear, Etc-GIRLS. opening show",
       "when": "2019-10-25",
-      "where": "artincu",
+      "where": "artsincu",
       "with": ""
     },
     {
@@ -88,7 +81,7 @@
     },
     {
       "category": "DJING",
-      "title": "람한X글로리홀 전시 GHOST SHOTGUN closing",
+      "title": "람한X글로리홀 전시 GHOST SHOTGUN closing show",
       "when": "2019-07-26",
       "where": "시청각",
       "with": ""
@@ -102,9 +95,9 @@
     },
     {
       "category": "DJING",
-      "title": "황예지 개인전 Mago 공연 프로그램",
+      "title": "황예지 개인전 Mago 전시연계 프로그램",
       "when": "2019-07-06",
-      "where": "DNP",
+      "where": "D/P",
       "with": ""
     },
     {
@@ -147,7 +140,7 @@
       "title": "MIX [だいだい]",
       "when": "",
       "where": "",
-      "with": "perform2019"
+      "with": "perform 2019"
     },
     {
       "category": "MIX SHOW",
@@ -167,19 +160,26 @@
       "category": "LIVE",
       "title": "HOME NOT ALONE",
       "when": "2019-12-21",
-      "where": "burninggoose",
+      "where": "버닝 구스(burning goose)",
+      "with": "salamanda, joyul, hwi"
+    },
+    {
+      "category": "LIVE",
+      "title": "Vacuum FACTOR #02",
+      "when": "2019-11-23",
+      "where": "신도시(seendosi)",
       "with": ""
     },
     {
       "category": "EXHIBITION",
       "title": "Object Salad (for Babies)",
       "when": "2019-10-25",
-      "where": "서울타이포잔치",
+      "where": "2019 서울타이포잔치",
       "with": ""
     },
     {
       "category": "EXHIBITION",
-      "title": "OTJUNGRI2019",
+      "title": "OTJUNGRI 2019",
       "when": "2019-08-30",
       "where": "문화역서울 284 TMO",
       "with": ""
@@ -188,7 +188,7 @@
       "category": "EXHIBITION",
       "title": "だいだい ver.1",
       "when": "2019-08-27",
-      "where": "퍼폼 2019",
+      "where": "PERFORM 2019",
       "with": ""
     },
     {

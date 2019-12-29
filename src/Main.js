@@ -1,7 +1,6 @@
 import $style from "@src/Main.scss";
 import cat from "@src/cat.jpg";
 import data from "@src/_.json";
-import { Helmet } from "react-helmet";
 import React from "react";
 import Section from "@src/Section.js";
 import Thanks from "@src/Thanks.js";
@@ -29,14 +28,6 @@ export default class Main extends React.Component {
   render() {
     return (
       <main className={this.state.cat ? $style.cat : ""}>
-        <Helmet>
-          <meta charset="utf-8" />
-          <meta
-            name="viewport"
-            content="width=device-width,initial-scale=1.0"
-          />
-          <title>yeongdie</title>
-        </Helmet>
         <figure className={$style.figure}>
           <img src={cat} onClick={this.catClick} className={$style.cat} />
         </figure>
