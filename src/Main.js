@@ -21,6 +21,12 @@ export default class Main extends React.Component {
     this.catClick = this.catClick.bind(this);
     this.catPopstate = this.catPopstate.bind(this);
   }
+  componentDidMount() {
+    const searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.get("cat") === "hide") {
+      window.history.replaceState(this.state, "", "?");
+    }
+  }
   componentWillUnmount() {
     window.removeEventListener("popstate", this.catPopstate);
   }
