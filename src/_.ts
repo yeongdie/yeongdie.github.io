@@ -134,14 +134,6 @@ const _: Data = {
     {
       category: "MIX SHOW",
       title: "MIX",
-      subtitle: "[yyyy]",
-      when: "",
-      where: "",
-      with: "scramble radio"
-    },
-    {
-      category: "MIX SHOW",
-      title: "MIX",
       subtitle: "[8,800,000,000]",
       when: "",
       where: "",
@@ -342,7 +334,6 @@ const _: Data = {
     "NAO",
     "OTAKHEE",
     "PACK",
-    "Scramble Radio",
     "Youngmond",
     "VANS KOREA",
     "Von Bueno",
