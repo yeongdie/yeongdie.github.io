@@ -1,6 +1,7 @@
 import $style from "@src/Thanks.scss";
 import React from "react";
 export default function Thanks({ thanks }) {
+  thanks.sort((a, b) => String(a).localeCompare(b));
   return (
     <section>
       <h2 className={$style.head}>THANKS TO</h2>
