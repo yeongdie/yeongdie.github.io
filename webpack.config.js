@@ -90,7 +90,11 @@ module.exports = {
       favicon: path.resolve(srcPath, "fav.ico"),
       meta: {
         charset: "utf-8",
-        viewport: "width=device-width,initial-scale=1.0"
+        viewport: "width=device-width,initial-scale=1.0",
+        "og:title": "die 2019",
+        "og:type": "website",
+        "og:url": "https://yeongdie.github.io",
+        "og:description": "document for good bye"
       }
     }),
     new MiniCssExtractPlugin({
