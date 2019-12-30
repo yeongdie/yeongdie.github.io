@@ -328,6 +328,8 @@ const _: Data = {
     }
   ],
   thanks: [
+    "강예빈",
+    "김이재",
     "bar samut",
     "bela",
     "BUDXBEATS",
