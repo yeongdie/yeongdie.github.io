@@ -17,7 +17,7 @@ export default function Item({ item }) {
       <span className={$style.word} style={{ display: date ? "" : "none" }}>
         {date}
       </span>
-      <span className={$style.word}>{title}</span>
+      <span className={$style.word} style={{ display: title ? "" : "none" }}>{title}</span>
       {subtitle &&
         (to ? (
           <a href={to} target="_blank" className={$style.word}>
