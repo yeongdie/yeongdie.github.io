@@ -192,10 +192,12 @@ const _: Data = {
     },
     {
       category: "EXHIBITION",
-      title: "Object Salad (for Babies)",
+      title: "",
+      subtitle: "Object Salad (for Babies)",
       when: "2019-10-25",
       where: "2019 서울타이포잔치",
-      with: ""
+      with: "",
+      to: "https://vimeo.com/showcase/6515689"
     },
     {
       category: "EXHIBITION",
@@ -206,18 +208,22 @@ const _: Data = {
     },
     {
       category: "EXHIBITION",
-      title: "だいだい ver.1",
+      title: "",
+      subtitle: "だいだい ver.1",
       when: "2019-08-27",
       where: "PERFORM 2019",
-      with: ""
+      with: "",
+      to: "https://youtu.be/vsep9S3N1ww"
     },
     {
       category: "EXHIBITION",
       title:
-        "The Reference Asia: Art Book Library 2019 My Body Your Body Their Body",
+        "The Reference Asia:",
+      subtitle: "Art Book Library 2019 My Body Your Body Their Body",
       when: "2019-04-23",
       where: "",
-      with: ""
+      with: "",
+      to: "http://referenceasia.com/?p=9"
     },
     {
       category: "VIDEO SOUNDS",
