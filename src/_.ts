@@ -396,7 +396,8 @@ const _: Data = {
     "황예지",
     "황휘",
     "HALOMINIUM",
-    "HETEROPHONY"
+    "HETEROPHONY",
+    "BEM"
   ]
 };
 export = _;
