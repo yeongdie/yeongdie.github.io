@@ -217,8 +217,7 @@ const _: Data = {
     },
     {
       category: "EXHIBITION",
-      title:
-        "The Reference Asia:",
+      title: "The Reference Asia:",
       subtitle: "Art Book Library 2019 My Body Your Body Their Body",
       when: "2019-04-23",
       where: "",
@@ -393,10 +392,11 @@ const _: Data = {
     "한솔",
     "한인",
     "한진",
-    "할로미늄",
     "허현정",
     "황예지",
-    "황휘"
+    "황휘",
+    "HALOMINIUM",
+    "HETEROPHONY"
   ]
 };
 export = _;
