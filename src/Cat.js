@@ -1,6 +1,10 @@
 import $style from "@src/Cat.scss";
 import bat from "@src/bat.gif";
 import cat from "@src/cat.jpg";
+const $link = document.createElement("link");
+$link.setAttribute("rel", "prefetch");
+$link.setAttribute("href", bat);
+document.querySelector("head").append($link);
 export default class Cat extends React.Component {
   constructor(props) {
     super(props);
