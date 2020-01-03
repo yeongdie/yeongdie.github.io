@@ -5,58 +5,69 @@ import React from "react";
 export default class Cat extends React.Component {
   constructor(props) {
     super(props);
-    const { onClick } = props;
+    const { catClick } = props;
     this.state = {
-      mouse: {
-        x: null,
-        y: null
+      catClientRect: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0
       },
-      bat: false
+      bat: false,
+      resizing: false
     };
-    this.onClick = onClick;
+    this.catClick = catClick;
     this.refCat = React.createRef();
     this.refBat = React.createRef();
-    this.catMouseenter = this.catMouseenter.bind(this);
-    this.catMouseleave = this.catMouseleave.bind(this);
-    this.batMove = this.batMove.bind(this);
+    this.figureClick = this.figureClick.bind(this);
+    this.windowResize = this.windowResize.bind(this);
+    this.windowMousemove = this.windowMousemove.bind(this);
   }
-  catMouseenter() {
-    this.setState({
-      bat: true
-    });
+  figureClick() {
+    if (this.state.bat) {
+      this.catClick();
+    }
   }
-  catMouseleave(event) {
-    this.setState({
-      bat: false
-    });
-  }
-  batMove(event) {
-    this.setState({
-      mouse: {
-        x: event.clientX,
-        y: event.clientY
+  windowMousemove(event) {
+    const { clientX: x, clientY: y } = event;
+    const { top, right, bottom, left } = this.state.catClientRect;
+    const bat = y > top && x < right && y < bottom && x > left;
+    this.setState({ bat }, () => {
+      const { current: batElement } = this.refBat;
+      if (batElement) {
+        const offset = 24;
+        batElement.style.top = `${y - offset}px`;
+        batElement.style.left = `${x - offset}px`;
       }
     });
-    const { current: batElement } = this.refBat;
-    const offset = 8;
-    batElement.style.top = `${this.state.mouse.y + offset}px`;
-    batElement.style.left = `${this.state.mouse.x + offset}px`;
   }
-  componentDidMount() {
+  windowResize() {
     const { current: catElement } = this.refCat;
-    catElement.addEventListener("mouseenter", this.catMouseenter);
-    catElement.addEventListener("mouseleave", this.catMouseleave);
-    catElement.addEventListener("mousemove", this.batMove);
+    this.setState(({ resizing }) => {
+      if (!resizing) {
+        window.setTimeout(() => void this.setState({ resizing: false }), 20);
+        return {
+          catClientRect: catElement.getBoundingClientRect(),
+          resizing: true
+        };
+      }
+    });
+  }
+  async componentDidMount() {
+    window.addEventListener("resize", this.windowResize);
+    window.addEventListener("mousemove", this.windowMousemove);
+    const { current: catElement } = this.refCat;
+    await catElement.decode();
+    this.windowResize();
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.windowResize);
+    window.removeEventListener("mousemove", this.windowMousemove);
   }
   render() {
     return (
-      <figure className={$style.figure}>
-        <img
-          src={cat}
-          ref={this.refCat}
-          onClick={this.onClick}
-          className={$style.cat}
-        />
+      <figure className={$style.figure} onClick={this.figureClick}>
+        <img src={cat} ref={this.refCat} className={$style.cat} />
         {this.state.bat && (
           <img src={bat} ref={this.refBat} className={$style.bat} />
         )}

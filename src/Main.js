@@ -53,7 +53,7 @@ export default class Main extends React.Component {
     return (
       <main>
         {this.state.cat ? (
-          <Cat onClick={this.catClick} />
+          <Cat catClick={this.catClick} />
         ) : (
           <>
             <header className={$style.head}>

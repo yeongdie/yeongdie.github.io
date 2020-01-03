@@ -8,7 +8,7 @@ const isProduction = process.env.NODE_ENV === "production";
 const serverPath = process.cwd();
 const wwwPath = /Windows/.test(process.env.OS)
   ? path.resolve("/", "inetpub", "wwwroot")
-  : path.resolve("/", "Users", "jenny", "www");
+  : path.resolve(process.env.HOME, "www");
 const distPath = isProduction
   ? path.resolve(serverPath, "asset")
   : path.resolve(wwwPath, "yeongdie", "asset");
