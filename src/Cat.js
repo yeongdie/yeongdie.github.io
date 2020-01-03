@@ -1,7 +1,6 @@
 import $style from "@src/Cat.scss";
 import bat from "@src/bat.gif";
 import cat from "@src/cat.jpg";
-import React from "react";
 export default class Cat extends React.Component {
   constructor(props) {
     super(props);

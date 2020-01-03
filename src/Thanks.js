@@ -1,5 +1,4 @@
 import $style from "@src/Thanks.scss";
-import React from "react";
 export default function Thanks({ thanks }) {
   thanks.sort((a, b) => String(a).localeCompare(b));
   return (

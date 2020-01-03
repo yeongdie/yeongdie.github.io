@@ -84,6 +84,10 @@ module.exports = {
       resourceRegExp: /^\.\/locale$/,
       contextRegExp: /moment$/
     }),
+    new webpack.ProvidePlugin({
+      React: "react",
+      ReactDOM: "react-dom"
+    }),
     new HtmlWebpackPlugin({
       filename: "../index.html",
       title: "yeong die",

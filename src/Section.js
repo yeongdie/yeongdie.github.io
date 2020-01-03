@@ -1,5 +1,4 @@
 import $style from "@src/Section.scss";
-import React from "react";
 import Item from "@src/Item.js";
 export default function Section({ categoryTitle, items }) {
   return (

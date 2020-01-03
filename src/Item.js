@@ -1,5 +1,4 @@
 import $style from "@src/Item.scss";
-import React from "react";
 export default function Item({ item }) {
   const { title, subtitle, to } = item;
   const date = item.when
@@ -17,7 +16,9 @@ export default function Item({ item }) {
       <span className={$style.word} style={{ display: date ? "" : "none" }}>
         {date}
       </span>
-      <span className={$style.word} style={{ display: title ? "" : "none" }}>{title}</span>
+      <span className={$style.word} style={{ display: title ? "" : "none" }}>
+        {title}
+      </span>
       {subtitle &&
         (to ? (
           <a href={to} target="_blank" className={$style.word}>
