@@ -4,7 +4,7 @@ import cat from "@src/cat.jpg";
 const $link = document.createElement("link");
 $link.setAttribute("rel", "prefetch");
 $link.setAttribute("href", bat);
-document.querySelector("head").append($link);
+document.querySelector("head").appendChild($link);
 export default class Cat extends React.Component {
   constructor(props) {
     super(props);
@@ -60,8 +60,12 @@ export default class Cat extends React.Component {
     window.addEventListener("resize", this.windowResize);
     window.addEventListener("mousemove", this.windowMousemove);
     const { current: catElement } = this.refCat;
-    await catElement.decode();
-    this.windowResize();
+    if (catElement.decode) {
+      await catElement.decode();
+      this.windowResize();
+    } else {
+      catElement.onload = this.windowResize;
+    }
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.windowResize);
