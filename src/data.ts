@@ -19,7 +19,7 @@ interface Item {
   to?: string;
 }
 export const _2019: Data = {
-  title: "die 2019",
+  title: "died 2019",
   tumblr: "https://yeongchoi.tumblr.com/",
   categories: [
     "DJING",
@@ -33,7 +33,7 @@ export const _2019: Data = {
   thanks: thanks2019
 };
 export const _2020: Data = {
-  title: "die 2020",
+  title: "died 2020",
   categories: [
     "RELEASED",
     "EXHIBITION",
