@@ -44,11 +44,9 @@ export default function Main() {
     const url = new URL(window.location);
     const { searchParams } = url;
     const { cat: catQuery, year: yearQuery } = Object.fromEntries(searchParams);
-    if (catQuery === "hide") {
-      searchParams.delete("cat");
-      window.history.replaceState(Object.fromEntries(searchParams), "", url);
-    }
-    if (yearQuery) setYear(Number(yearQuery));
+    catQuery === "hide" && searchParams.delete("cat");
+    yearQuery && searchParams.delete("year");
+    window.history.replaceState(Object.fromEntries(searchParams), "", url);
     window.addEventListener("popstate", handlePopstate);
   }, []);
 
