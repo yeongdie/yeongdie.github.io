@@ -27,14 +27,18 @@ export default class Main extends React.Component {
   componentDidMount() {
     const searchParams = new URLSearchParams(window.location.search);
     if (searchParams.get("cat") === "hide") {
-      window.history.replaceState(this.state, "", "?");
+      const url = new URL(window.location);
+      url.searchParams.delete("cat");
+      window.history.replaceState(this.state, "", url);
     }
   }
   componentWillUnmount() {
     window.removeEventListener("popstate", this.catPopstate);
   }
   catClick() {
-    window.history.pushState(this.state, "", "?cat=hide");
+    const url = new URL(window.location);
+    url.searchParams.set("cat", "hide");
+    window.history.pushState(this.state, "", url);
     window.addEventListener("popstate", this.catPopstate);
     this.setState({
       cat: false
@@ -42,15 +46,9 @@ export default class Main extends React.Component {
   }
   catPopstate() {
     const searchParams = new URLSearchParams(window.location.search);
-    if (searchParams.get("cat") === "hide") {
-      this.setState({
-        cat: false
-      });
-    } else {
-      this.setState({
-        cat: true
-      });
-    }
+    this.setState({
+      cat: searchParams.get("cat") !== "hide"
+    });
   }
   render() {
     return (
