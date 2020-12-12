@@ -17,7 +17,7 @@ const srcPath = path.resolve(serverPath, "src");
 module.exports = {
   mode: isProduction ? "production" : "development",
   entry: { index: path.resolve(srcPath, "index.js") },
-  devtool: isProduction ? "none" : "cheap-module-source-map",
+  devtool: isProduction ? false : "cheap-module-source-map",
   output: {
     path: distPath,
     publicPath: isProduction ? "/asset/" : "./asset/",
