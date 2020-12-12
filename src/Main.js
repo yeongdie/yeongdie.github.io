@@ -1,9 +1,9 @@
 import $style from "@src/Main.scss";
 import Cat from "@src/Cat.js";
-import data from "@src/_.ts";
+import { _2019, _2020 } from "@src/data.ts";
 import Section from "@src/Section.js";
 import Thanks from "@src/Thanks.js";
-const { title, tumblr, categories, items, thanks } = data;
+const { title, tumblr, categories, items, thanks } = _2020;
 export default class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +11,11 @@ export default class Main extends React.Component {
       <Section
         key={categoryTitle}
         categoryTitle={categoryTitle}
-        items={items.filter(({ category }) => category === categoryTitle)}
+        items={items
+          .filter(({ category }) => category === categoryTitle)
+          .sort(({ when: aWhen = "" }, { when: bWhen = "" }) =>
+            bWhen.localeCompare(aWhen)
+          )}
       />
     ));
     this.state = {
