@@ -12,7 +12,7 @@ export default function Item({ item }) {
   const location = item.where ? `@${item.where}` : "";
   const collaborator = item.with ? `/w ${item.with}` : "";
   return (
-    <li>
+    <li className={$style.item}>
       <span className={$style.word} style={{ display: date ? "" : "none" }}>
         {date}
       </span>

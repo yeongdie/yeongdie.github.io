@@ -1,3 +1,7 @@
+.item {
+  margin: 0.2em 0;
+  line-height: 1.2em;
+}
 .word {
   &:first-child {
     display: inline-block;
