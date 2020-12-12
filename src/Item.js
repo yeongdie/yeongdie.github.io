@@ -1,6 +1,6 @@
 import $style from "@src/Item.scss";
 export default function Item({ item }) {
-  const { title, subtitle, to } = item;
+  const { title, subtitle, tail, to } = item;
   const date = item.when
     ? (() => {
         const parsed = new Date(item.when);
@@ -27,6 +27,7 @@ export default function Item({ item }) {
         ) : (
           <span className={$style.word}>{subtitle}</span>
         ))}
+      {tail && <span className={$style.word}>{tail}</span>}
       <span className={$style.word} style={{ display: location ? "" : "none" }}>
         {location}
       </span>
