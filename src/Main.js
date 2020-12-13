@@ -57,7 +57,7 @@ export default function Main() {
     [year]
   );
 
-  const { tumblr, categories, items, thanks } = (() => {
+  const { categories, items, link, thanks } = (() => {
     switch (year) {
       case 2020:
         return _2020;
@@ -78,9 +78,9 @@ export default function Main() {
         <option>2019</option>
       </select>
       <br />
-      <a href={tumblr} target="_blank" className={$style.tumblr}>
-        {tumblr}
-      </a>
+      {link && <a href={link} target="_blank" className={$style.link}>
+        {link}
+      </a>}
     </header>
   );
 
@@ -100,12 +100,12 @@ export default function Main() {
       {cat ? (
         <Cat catClick={catClick} />
       ) : (
-        <>
-          <Header />
-          <Sections />
-          <Thanks thanks={thanks} />
-        </>
-      )}
+          <>
+            <Header />
+            <Sections />
+            <Thanks thanks={thanks} />
+          </>
+        )}
     </main>
   );
 }

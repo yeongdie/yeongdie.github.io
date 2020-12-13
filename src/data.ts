@@ -3,7 +3,7 @@ import items2020 from "./2020/items.json";
 import thanks2019 from "./2019/thanks.json";
 import thanks2020 from "./2020/thanks.json";
 interface Data {
-  tumblr?: string;
+  link?: string;
   categories: string[];
   items: Item[];
   thanks: string[];
@@ -18,7 +18,7 @@ interface Item {
   to?: string;
 }
 export const _2019: Data = {
-  tumblr: "https://yeongchoi.tumblr.com/",
+  link: "https://yeongchoi.tumblr.com",
   categories: [
     "DJING",
     "MIX SHOW",
@@ -31,6 +31,7 @@ export const _2019: Data = {
   thanks: thanks2019
 };
 export const _2020: Data = {
+  link: "https://fanlink.to/YeongDie",
   categories: [
     "RELEASED",
     "EXHIBITION",
