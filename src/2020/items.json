@@ -40,16 +40,6 @@
     "to": "https://psychicliberation.bandcamp.com/album/intimate-ghosting"
   },
   {
-    "category": "RELEASED",
-    "title": "싱글 음원",
-    "subtitle": "'Jam and Jar'(2020)",
-    "tail": "유튜브 및 사운드클라우드 공개",
-    "when": "2019-12-10",
-    "where": "",
-    "with": "",
-    "to": "https://youtu.be/V10CpMVGAE8"
-  },
-  {
     "category": "EXHIBITION",
     "title": "[2020 문화비축기지 Global Week - 예술가의 공원, 치유의 공원]",
     "subtitle": "だいだい vol.2 : Claude Debussy vs Yeong Die' (2020, Stereo Sound, 15min)",
@@ -133,6 +123,15 @@
     "to": "https://soundcloud.com/yeongdie/yeong-die-mix-lets-dive-art-street?in=yeongdie/sets/m-i-x-e-s"
   },
   {
+    "category": "MIX SHOW",
+    "title": "",
+    "subtitle": "PLAYLIST for Bar Samut: 12 DAYS, 24 HOURS",
+    "when": "2019-12-21",
+    "where": "",
+    "with": "Bar Samut(바 사뭇)",
+    "to": "https://www.youtube.com/channel/UCmSHBhOakSTpOO1FXsQuSmw/playlists"
+  },
+  {
     "category": "LIVE",
     "title": "",
     "subtitle": "Quick-Die",
@@ -209,7 +208,7 @@
     "category": "VIDEO SOUNDS",
     "title": "",
     "subtitle": "HALOMINIUM F/W [HOMEWORK, 2020]",
-    "tail": "총 6편의 비디오 사운드와 내레이션으로 참여",
+    "tail": "총 6편 비디오워크의 내레이션, 사운드 디자인",
     "when": "2019-10-23",
     "where": "",
     "with": "",
@@ -234,7 +233,7 @@
 
   {
     "category": "FEATURED",
-    "title": "VOSTOK 매거진 23호 〈POSTCARDS: 100 PHOTOGRAPHERS 100 PHOTOS〉 포스트카드 이슈: 사진가 102명의 사진엽서에 Background Eraser(Ways of Seeing) 작업으로 참여",
+    "title": "VOSTOK 매거진 23호 〈POSTCARDS: 100 PHOTOGRAPHERS 100 PHOTOS〉 포스트카드 이슈: 사진가 102명의 사진엽서에 Background Eraser(Ways of Seeing)으로 참여",
     "when": "2019-09-16",
     "where": "",
     "with": ""
@@ -249,7 +248,7 @@
   },
   {
     "category": "FEATURED",
-    "title": "[한솔 개인전, starry starry night] 전시공간 BGM으로 참여",
+    "title": "[한솔 개인전, starry starry night] 전시공간 BGM",
     "when": "2019-10-16",
     "where": "",
     "with": ""

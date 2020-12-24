@@ -31,7 +31,7 @@ export const _2019: Data = {
   thanks: thanks2019
 };
 export const _2020: Data = {
-  link: "https://fanlink.to/YeongDie",
+  link: "https://linktr.ee/lildead19",
   categories: [
     "RELEASED",
     "EXHIBITION",
