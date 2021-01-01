@@ -8,6 +8,7 @@
     "noEmit": true,
     "paths": { "@src/*": ["src/*"] },
     "resolveJsonModule": true,
+    "sourceMap": true,
     "strict": true,
     "target": "es5"
   }
