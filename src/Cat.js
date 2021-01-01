@@ -1,84 +1,72 @@
 import $style from "@src/Cat.scss";
-import bat from "@src/bat.gif";
-import cat from "@src/cat.jpg";
+import batGif from "@src/bat.gif";
+import catJpeg from "@src/cat.jpg";
+import catWebp from "@src/cat.webp";
+
+const { useEffect, useRef, useState } = React;
+
 const $link = document.createElement("link");
 $link.setAttribute("rel", "prefetch");
-$link.setAttribute("href", bat);
+$link.setAttribute("href", batGif);
 document.querySelector("head").appendChild($link);
-export default class Cat extends React.Component {
-  constructor(props) {
-    super(props);
-    const { catClick } = props;
-    this.state = {
-      catClientRect: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0
-      },
-      bat: false,
-      resizing: false
-    };
-    this.catClick = catClick;
-    this.refCat = React.createRef();
-    this.refBat = React.createRef();
-    this.figureClick = this.figureClick.bind(this);
-    this.windowResize = this.windowResize.bind(this);
-    this.windowMousemove = this.windowMousemove.bind(this);
-  }
-  figureClick() {
-    if (this.state.bat) {
-      this.catClick();
-    }
-  }
-  windowMousemove(event) {
+
+export default function Cat({ catClick }) {
+  const [bat, setBat] = useState(false);
+  const [catClientRect, setCatClientRect] = useState({
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
+  });
+  const [refBat, refCat] = [useRef(), useRef()];
+
+  const figureClick = () => bat && catClick();
+
+  const handleMouseMove = event => {
     const { clientX: x, clientY: y } = event;
-    const { top, right, bottom, left } = this.state.catClientRect;
-    const bat = y > top && x < right && y < bottom && x > left;
-    this.setState({ bat }, () => {
-      const { current: batElement } = this.refBat;
-      if (batElement) {
-        const offset = 24;
-        batElement.style.top = `${y - offset}px`;
-        batElement.style.left = `${x - offset}px`;
-      }
-    });
-  }
-  windowResize() {
-    const { current: catElement } = this.refCat;
-    this.setState(({ resizing }) => {
-      if (!resizing) {
-        window.setTimeout(() => void this.setState({ resizing: false }), 20);
-        return {
-          catClientRect: catElement.getBoundingClientRect(),
-          resizing: true
-        };
-      }
-    });
-  }
-  async componentDidMount() {
-    window.addEventListener("resize", this.windowResize);
-    window.addEventListener("mousemove", this.windowMousemove);
-    const { current: catElement } = this.refCat;
-    if (catElement.decode) {
-      await catElement.decode();
-      this.windowResize();
-    } else {
-      catElement.onload = this.windowResize;
+    const { top, right, bottom, left } = catClientRect;
+    const { current: batElement } = refBat;
+    setBat(y > top && x < right && y < bottom && x > left);
+    if (batElement) {
+      const offset = 24;
+      Object.assign(batElement.style, {
+        top: `${y - offset}px`,
+        left: `${x - offset}px`,
+        visibility: "visible"
+      });
     }
-  }
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.windowResize);
-    window.removeEventListener("mousemove", this.windowMousemove);
-  }
-  render() {
-    return (
-      <figure className={$style.figure} onClick={this.figureClick}>
-        <img src={cat} ref={this.refCat} className={$style.cat} />
-        {this.state.bat && (
-          <img src={bat} ref={this.refBat} className={$style.bat} />
-        )}
-      </figure>
-    );
-  }
+  };
+
+  useEffect(function globalEffect() {
+    const handleWindowResize = () => {
+      const { current: catElement } = refCat;
+      setCatClientRect(catElement.getBoundingClientRect());
+    };
+    (() => {
+      const image = new Image();
+      try {
+        image.src = catWebp;
+        return image.decode();
+      } catch {
+        image.src = catJpeg;
+        return image.decode();
+      }
+    })().then(handleWindowResize);
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+
+  return (
+    <figure
+      className={$style.figure}
+      onClick={figureClick}
+      onMouseMove={handleMouseMove}
+    >
+      <picture draggable="false" ref={refCat}>
+        <source srcSet={catWebp} type="image/webp" className={$style.cat} />
+        <img src={catJpeg} className={$style.cat} />
+      </picture>
+      {bat && <img src={batGif} ref={refBat} className={$style.bat} />}
+    </figure>
+  );
 }
