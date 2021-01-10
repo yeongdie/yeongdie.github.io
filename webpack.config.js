@@ -110,7 +110,7 @@ module.exports = {
       meta: {
         charset: "utf-8",
         viewport: "width=device-width,initial-scale=1.0",
-        "og:title": "die 2019",
+        "og:title": "die 2020",
         "og:type": "website",
         "og:url": "https://yeongdie.github.io",
         "og:description": "document for good bye"
